@@ -169,6 +169,7 @@
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type Testimonial = {
@@ -244,7 +245,7 @@ export const AnimatedTestimonials = ({
                 }}
                 className="absolute inset-0 origin-bottom"
               >
-                <img
+                <Image
                   src={testimonial.src}
                   alt={testimonial.name}
                   width={500}

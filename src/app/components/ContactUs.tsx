@@ -1,6 +1,7 @@
 
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
 export function Contact() {
@@ -55,9 +56,10 @@ export function Contact() {
             className="group flex flex-col items-center flex-shrink-0 transform transition duration-300 hover:scale-110"
           >
             <div className="p-2 rounded-full bg-black/20 backdrop-blur-md shadow-lg hover:shadow-blue-500/50 transition-all duration-300">
-              <img
+              <Image
                 src={link.icon}
                 alt={link.title}
+                fill
                 className="h-12 w-12 md:h-16 md:w-16 object-contain group-hover:rotate-12 transition-transform duration-300"
               />
             </div>

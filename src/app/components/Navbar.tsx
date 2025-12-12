@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, type Transition } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const transition: Transition = {
   type: "spring",
@@ -99,7 +100,7 @@ const EventItem = ({
 }) => {
   return (
     <a href={href} className="flex space-x-2 hover:opacity-90 transition">
-      <img
+      <Image
         src={src}
         width={100}
         height={100}

@@ -3,6 +3,7 @@ import React from "react"
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal"
 import { motion } from "framer-motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
+import Image from "next/image";
 
 const content = [
     {
@@ -10,10 +11,11 @@ const content = [
         description: "The Microsoft Learning Club (MLSC) is a vibrant community dedicated to fostering learning and growth in technology and innovation. We offer a range of activities including workshops, seminars, and networking events.",
         content: (
             <div className="relative h-full w-full overflow-hidden rounded-xl">
-                <img
+                <Image
                     src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop"
                     alt="Students collaborating at a college hackathon event"
                     className="h-full w-full object-cover"
+                    fill
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 text-3xl font-bold text-white drop-shadow-2xl">
@@ -29,10 +31,11 @@ const content = [
             <div
                 id="mission"
                 className="relative h-full w-full overflow-hidden rounded-xl">
-                <img
+                <Image
                     src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop"
                     alt="Students collaborating at a college hackathon event"
                     className="h-full w-full object-cover"
+                    fill
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f52ba] via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-6 left-6 text-3xl font-bold text-white drop-shadow-2xl">
@@ -46,10 +49,11 @@ const content = [
         description: "We envision a community where technology enthusiasts can collaborate, innovate, and inspire each other to achieve personal and professional growth.",
         content: (
             <div className="relative h-full w-full overflow-hidden rounded-xl">
-                <img
+                <Image
                     src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop"
                     alt="Students collaborating at a college hackathon event"
                     className="h-full w-full object-cover"
+                    fill                    
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70" />
                 <div className="absolute bottom-6 left-6 text-3xl font-bold text-cyan-300 drop-shadow-2xl">
@@ -63,10 +67,11 @@ const content = [
         description: "Join us to participate in exciting events, connect with experts, and enhance your skills. Be part of a community that's passionate about technology and learning.",
         content: (
             <div className="relative h-full w-full overflow-hidden rounded-xl bg-black">
-                <img
+                <Image
                     src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d7?w=800&h=600&fit=crop"
                     alt="Students getting involved in college coding club activities"
                     className="h-full w-full object-cover opacity-70"
+                    fill
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/50 to-black" />
                 <div className="absolute inset-0 flex items-center justify-center">
