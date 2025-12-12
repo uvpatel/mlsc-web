@@ -199,7 +199,7 @@ const Timeline: React.FC = () => {
                     
                     {/* Members Grid */}
                     <div className="grid grid-cols-4 sm:grid-cols-5 gap-2 sm:gap-3 mb-4">
-                      {displayMembers.map((member, i:any) => (
+                      {displayMembers.map((member, i) => (
                         <div
                           key={i}
                           className="relative group"
