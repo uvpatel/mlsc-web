@@ -8,6 +8,20 @@ export default function Team() {
     {
       quote:
         "Leading with vision, learning with purpose, and empowering others to explore the limitless world of technology.",
+      name: "Prof. Priyank Bhojak",
+      designation: "Faculty Advisor",
+      src: "https://image2url.com/images/1765564657314-0fdc56bd-92b8-4813-b3d3-fadec0faf627.png",
+    },
+    {
+      quote:
+        "What you can do is more important than your IQ.",
+      name: "Vraj Upadhyay",
+      designation: "Mentor",
+      src: "https://image2url.com/images/1765564929713-4a742168-86ad-4b32-a58a-c9dc85c48fec.png",
+    },
+    {
+      quote:
+        "Leading with vision, learning with purpose, and empowering others to explore the limitless world of technology.",
       name: "Shreya Mevada",
       designation: "Club Lead",
       src: " https://image2url.com/images/1762016725159-371df7e5-8f19-4a89-b251-4aa7f1626513.jpg",
@@ -18,6 +32,13 @@ export default function Team() {
       name: "Parv Luhar",
       designation: "Club Co-Lead",
       src: "https://image2url.com/images/1765536578242-083dde5b-2f9b-44cc-8b8e-f945ee4bc2d6.jpeg",
+    },
+    {
+      quote:
+        "Where creativity meets flawless execution.",
+      name: "Tanisha Patel",
+      designation: "Event Manager",
+      src: "https://image2url.com/images/1765560793186-d16c0f3a-438f-497f-a2c0-cd94c5381370.png",
     },
     {
       quote:

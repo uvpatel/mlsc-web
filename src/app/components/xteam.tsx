@@ -123,7 +123,7 @@ const Timeline: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative bg-black min-h-screen py-12 sm:py-16 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-black min-h-screen py-12 sm:py-16 overflow-hidden" id="PastMembers">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Title */}
         <h2

@@ -101,10 +101,10 @@ const EventItem = ({
     <a href={href} className="flex space-x-2 hover:opacity-90 transition">
       <img
         src={src}
-        width={140}
-        height={70}
+        width={100}
+        height={100}
         alt={title}
-        className="shrink-0 rounded-md shadow-2xl object-cover"
+        className="shrink-0 rounded-md shadow-2xl object-contain"
       />
       <div>
         <h4 className="text-lg font-semibold mb-1 text-white">{title}</h4>
@@ -135,35 +135,35 @@ function Navbar({ className }: { className?: string }) {
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="#about">About MLSC</HoveredLink>
               <HoveredLink href="#team">Our Team</HoveredLink>
-              <HoveredLink href="#about#mission">Mission & Vision</HoveredLink>
-              <HoveredLink href="#join">Join Us</HoveredLink>
+              <HoveredLink href="#PastMembers">Members</HoveredLink>
+              <HoveredLink href="#Connect">Connect with Us</HoveredLink>
             </div>
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Events">
             <div className="text-sm grid grid-cols-2 gap-10 p-4">
               <EventItem
+                title="Web Services"
+                href="#webservices"
+                src="https://image2url.com/images/1765562959795-fc18203f-0493-4311-ab1f-3de1e388f09c.png"
+                description="Hands-on Workshop on Web Services."
+              />
+              <EventItem
                 title="Azure Workshop"
-                href="/events/azure-workshop"
-                src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?w=400&h=200&fit=crop"
-                description="Learn cloud computing fundamentals with Microsoft Azure."
+                href="#azure-workshop"
+                src="https://image2url.com/images/1765561308620-d587b4df-db49-4913-96ef-224b1ff0504c.png"
+                description="Hands-On Workshop On Azure Services."
               />
               <EventItem
-                title="AI & ML Bootcamp"
+                title="Figma Workshop"
                 href="/events/ai-bootcamp"
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop"
-                description="Dive into artificial intelligence and machine learning concepts."
+                src="https://image2url.com/images/1765561421567-c89db34e-2e5b-45a4-985d-ee004d6a3d99.png"
+                description="Figma Fusion was an exciting design competition organized through a collaboration between GDSC and MLSC."
               />
               <EventItem
-                title="Hackathon 2025"
+                title="Binary Battles"
                 href="/events/hackathon"
-                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=200&fit=crop"
-                description="24-hour coding challenge with amazing prizes and mentorship."
-              />
-              <EventItem
-                title="Tech Talk Series"
-                href="/events/tech-talks"
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=200&fit=crop"
-                description="Weekly sessions with industry experts and alumni."
+                src="https://image2url.com/images/1765561722307-377fc7b6-3266-453f-a7b6-b59474254cc8.png"
+                description="Binary Battles, an exciting coding competition designed to challenge students problem-solving and analytical skills."
               />
             </div>
           </MenuItem>
@@ -211,29 +211,30 @@ function Navbar({ className }: { className?: string }) {
                 <MenuItem setActive={setActive} active={active} item="Events" isMobile>
                   <div className="flex flex-col space-y-4 text-sm">
                     <EventItem
+                      title="Web Services"
+                      href="#webservices"
+                      src="https://image2url.com/images/1765562959795-fc18203f-0493-4311-ab1f-3de1e388f09c.png"
+                      description="Hands-on Workshop on Web Services."
+                    />
+                    <EventItem
                       title="Azure Workshop"
                       href="/events/azure-workshop"
-                      src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?w=400&h=200&fit=crop"
-                      description="Learn cloud computing fundamentals."
+                      src="https://image2url.com/images/1765561308620-d587b4df-db49-4913-96ef-224b1ff0504c.png"
+                      description="Hands-On Workshop On Azure Services."
                     />
                     <EventItem
-                      title="AI & ML Bootcamp"
+                      title="Figma Fusion"
                       href="/events/ai-bootcamp"
-                      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop"
-                      description="Dive into AI and ML concepts."
+                      src="https://image2url.com/images/1765561421567-c89db34e-2e5b-45a4-985d-ee004d6a3d99.png"
+                      description="Figma Fusion was an exciting design competition organized through a collaboration between GDSC and MLSC."
                     />
                     <EventItem
-                      title="Hackathon 2025"
+                      title="Binary Battles"
                       href="/events/hackathon"
-                      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=200&fit=crop"
-                      description="24-hour coding challenge."
+                      src="https://image2url.com/images/1765561722307-377fc7b6-3266-453f-a7b6-b59474254cc8.png"
+                      description="Binary Battles, an exciting coding competition designed to challenge students problem-solving and analytical skills."
                     />
-                    <EventItem
-                      title="Tech Talk Series"
-                      href="/events/tech-talks"
-                      src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=200&fit=crop"
-                      description="Weekly sessions with experts."
-                    />
+
                   </div>
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Resources" isMobile>

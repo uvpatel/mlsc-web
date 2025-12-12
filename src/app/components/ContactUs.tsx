@@ -8,12 +8,7 @@ export function Contact() {
     {
       title: "Home",
       icon: "https://img.icons8.com/color/48/000000/home-page.png",
-      href: "#",
-    },
-    {
-      title: "Projects",
-      icon: "https://img.icons8.com/color/48/000000/source-code.png",
-      href: "#projects",
+      href: "#Hero",
     },
     {
       title: "About",
@@ -23,39 +18,29 @@ export function Contact() {
     {
       title: "Contact",
       icon: "https://img.icons8.com/color/48/000000/email.png",
-      href: "mailto:mlsc@example.com",
-    },
-    {
-      title: "GitHub",
-      icon: "https://img.icons8.com/color/48/000000/github--v1.png",
-      href: "https://github.com/mlsc",
+      href: "mailto:mlsc@mlsaclub@bvmengineering.ac.in",
     },
     {
       title: "LinkedIn",
       icon: "https://img.icons8.com/color/48/000000/linkedin.png",
-      href: "https://www.linkedin.com/company/mlsc",
+      href: "https://www.linkedin.com/in/mlsc-bvm/",
     },
     {
       title: "Instagram",
       icon: "https://img.icons8.com/color/48/000000/instagram-new.png",
-      href: "https://www.instagram.com/mlsc",
-    },
-    {
-      title: "Twitter",
-      icon: "https://img.icons8.com/color/48/000000/twitter--v1.png",
-      href: "https://twitter.com/mlsc",
-    },
+      href: "https://www.instagram.com/mlsc_bvm/",
+    }
   ];
 
   return (
-    <div id="contact" className="w-full bg-gradient-to-t from-black via-gray-900 to-black py-10 px-4">
+    <div id="Connect" className="w-full bg-gradient-to-t from-black via-gray-900 to-black py-10 px-4">
       {/* Club Name */}
       <div className="text-center mb-8">
         <h1 className="text-white text-4xl md:text-5xl font-extrabold tracking-wide">
           Microsoft Learning Student Club
         </h1>
         <p className="text-gray-400 mt-2 md:text-lg">
-          Empowering Students with Technology & Innovation
+          Empowering Students with Technology & Innovation Connect with Us
         </p>
       </div>
 
