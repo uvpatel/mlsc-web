@@ -85,7 +85,7 @@ const Timeline: React.FC = () => {
 
       // Animate each team card
       const cards = document.querySelectorAll(".team-card");
-      cards.forEach((card, i) => {
+      cards.forEach((card) => {
         gsap.from(card, {
           opacity: 0,
           y: 100,
@@ -130,8 +130,7 @@ const Timeline: React.FC = () => {
           ref={titleRef}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-12 sm:mb-16 md:mb-20"
         >
-          
-           <EncryptedText
+          <EncryptedText
               text="Our Members"
               encryptedClassName="text-white"
               revealedClassName="text-white"
@@ -200,7 +199,7 @@ const Timeline: React.FC = () => {
                     
                     {/* Members Grid */}
                     <div className="grid grid-cols-4 sm:grid-cols-5 gap-2 sm:gap-3 mb-4">
-                      {displayMembers.map((member, i) => (
+                      {displayMembers.map((member, i:any) => (
                         <div
                           key={i}
                           className="relative group"
