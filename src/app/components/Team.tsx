@@ -66,7 +66,7 @@ export default function Team() {
         "Transforming fleeting thoughts into timeless narratives.",
       name: "Jeet Vasoya",
       designation: "Content Lead",
-      src: " https://image2url.com/images/1765536193481-7447dccd-b255-4d95-b2a9-89edf494d364.jpeg",
+      src: "https://image2url.com/images/1765536193481-7447dccd-b255-4d95-b2a9-89edf494d364.jpeg",
     },
     {
       quote:
@@ -101,7 +101,7 @@ export default function Team() {
         "Every error teaches patience, every solution builds confidence and every new concept expands what 's possible.",
       name: "Tailor Maitry",
       designation: "PR Manager",
-      src: " https://image2url.com/images/1762154427216-ce765290-8c7c-43a7-a252-f445b57ff51b.jpg",
+      src: "https://image2url.com/images/1762154427216-ce765290-8c7c-43a7-a252-f445b57ff51b.jpg",
     },
     {
       quote:
