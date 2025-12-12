@@ -24,7 +24,7 @@ export default function Team() {
         "Leading with vision, learning with purpose, and empowering others to explore the limitless world of technology.",
       name: "Shreya Mevada",
       designation: "Club Lead",
-      src: " https://image2url.com/images/1762016725159-371df7e5-8f19-4a89-b251-4aa7f1626513.jpg",
+      src: "https://image2url.com/images/1762016725159-371df7e5-8f19-4a89-b251-4aa7f1626513.jpg",
     },
     {
       quote:
@@ -115,7 +115,7 @@ export default function Team() {
         "A great team turns challenges into opportunities.",
       name: "Hiya Patel",
       designation: "Team Member",
-      src: " https://image2url.com/images/1762356399106-95f31021-b7a7-47b7-8695-abd377b7d518.jpeg",
+      src: "https://image2url.com/images/1762356399106-95f31021-b7a7-47b7-8695-abd377b7d518.jpeg",
     },
 
     
