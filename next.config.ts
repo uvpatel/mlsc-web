@@ -1,10 +1,17 @@
-import type { NextConfig } from "next";
+// next.config.ts
+import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
   images: {
-    domains: ["images.unsplash.com"], // allow Unsplash
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**", // allow all paths from this host
+      },
+    ],
   },
 };
 
