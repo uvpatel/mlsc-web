@@ -128,17 +128,18 @@ const Timeline: React.FC = () => {
         {/* Title */}
         <h2
           ref={titleRef}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-12 sm:mb-16 md:mb-20"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-500 text-center mb-12 sm:mb-16 md:mb-20"
         >
           <EncryptedText
               text="Our Members"
-              encryptedClassName="text-white"
-              revealedClassName="text-white"
+              encryptedClassName="text-blue-500"
+              revealedClassName="text-blue-500"
               revealDelayMs={80}
               flipDelayMs={60}
             />
+            
         </h2>
-
+      
         {/* Central Timeline Line */}
         <div className="absolute left-6 md:left-1/2 top-24 sm:top-32 md:top-40 bottom-0 w-0.5 md:w-1 bg-gray-800 md:transform md:-translate-x-1/2 overflow-hidden">
           <div

@@ -48,12 +48,12 @@ export function Contact() {
     <div id="Connect" className="w-full bg-gradient-to-t from-black via-gray-900 to-black py-10 px-4">
       {/* Club Name */}
       <div className="text-center mb-8">
-        <h1 className="text-white text-4xl md:text-5xl font-extrabold tracking-wide">
+        <h1 className="text-blue-500 text-4xl md:text-5xl font-extrabold tracking-wide">
           
           <EncryptedText
                     text="Microsoft Learn Student Club"
-                    encryptedClassName="text-white"
-                    revealedClassName="text-white"
+                    encryptedClassName="text-blue-500"
+                    revealedClassName="text-blue-500"
                     revealDelayMs={80}
                     flipDelayMs={60}
                   />

@@ -42,7 +42,7 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = ["#000000", "#0f172a", "#171717"];
+  const backgroundColors = ["#000000", "#0f172a", "#000000"];
 
   const linearGradients = useMemo(
     () => [

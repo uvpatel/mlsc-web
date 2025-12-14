@@ -12,15 +12,15 @@ const content = [
         content: (
             <div className="relative h-full w-full overflow-hidden rounded-xl">
                 <Image
-                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop"
+                    src="/team.jpg"
                     alt="Students collaborating at a college hackathon event"
                     className="h-full w-full object-cover"
-                    width={100}
-                    height={100}
+                    width={1920}
+                    height={1080}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 text-3xl font-bold text-white drop-shadow-2xl">
-                    Hackathons
+                    Team
                 </div>
             </div>
         ),
@@ -33,15 +33,15 @@ const content = [
                 id="mission"
                 className="relative h-full w-full overflow-hidden rounded-xl">
                 <Image
-                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop"
+                    src="/Event.jpg"
                     alt="Students collaborating at a college hackathon event"
                     className="h-full w-full object-cover"
-                    width={100}
-                    height={100}
+                    width={1920}
+                    height={1080}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f52ba] via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-6 left-6 text-3xl font-bold text-white drop-shadow-2xl">
-                    Open Source
+                    Workshops
                 </div>
             </div>
         ),
@@ -52,11 +52,11 @@ const content = [
         content: (
             <div className="relative h-full w-full overflow-hidden rounded-xl">
                 <Image
-                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop"
+                    src="/xteam.jpg"
                     alt="Students collaborating at a college hackathon event"
                     className="h-full w-full object-cover"
-                    width={100}
-                    height={100}                 
+                    width={1920}
+                    height={1080}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70" />
                 <div className="absolute bottom-6 left-6 text-3xl font-bold text-cyan-300 drop-shadow-2xl">
@@ -71,11 +71,11 @@ const content = [
         content: (
             <div className="relative h-full w-full overflow-hidden rounded-xl bg-black">
                 <Image
-                    src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d7?w=800&h=600&fit=crop"
-                    alt="Students getting involved in college coding club activities"
+                    src="/xteam.jpg"
+                    alt="Group of Microsoft Learn Student Ambassadors excited and ready to get involved"
                     className="h-full w-full object-cover opacity-70"
-                    width={100}
-                    height={100}
+                    fill
+                    sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/50 to-black" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -89,23 +89,38 @@ const content = [
 ];
 export function About() {
     return (
+        <section
+            id="about"
+            className="relative w-full overflow-hidden bg-black"
+        >
+            {/* unified background */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black via-[#020617] to-black" />
 
-        <div className="bg-black relative" id="about">
-            <motion.h2
-                className="text-4xl md:text-5xl font-bold text-white text-center "
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-                <EncryptedText
-                    text="About Us"
-                    encryptedClassName="text-white"
-                    revealedClassName="text-white"
-                    revealDelayMs={80}
-                    flipDelayMs={60}
-                />
-            </motion.h2>
-            <StickyScroll content={content} />
-        </div>
+            {/* Header */}
+            <div className="relative z-10 pt-24 pb-12">
+                <motion.h2
+                    className="text-4xl md:text-5xl font-bold text-white text-center"
+                    initial={{ opacity: 0, y: -40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <EncryptedText
+                        text="About Us"
+                        encryptedClassName="text-blue-500 "
+                        revealedClassName="text-blue-500 "
+                    />
+                </motion.h2>
+
+                
+            </div>
+
+            {/* Sticky Scroll wrapper */}
+            <div className="relative z-10 bg-transparent">
+                <StickyScroll content={content} />
+            </div>
+        </section>
+
     );
+
 }

@@ -1,50 +1,73 @@
 "use client";
 
-import Image from 'next/image';
-import DarkVeil from '../components/ui/DarkVeil';
-import NavbarLayer from './Navbar';
+import Image from "next/image";
+import DarkVeil from "../components/ui/DarkVeil";
+import NavbarLayer from "./Navbar";
 
 export default function Hero() {
   return (
-    <div id='Hero'
-    className="w-full min-h-[600px] md:min-h-[700px] relative bg-gradient-to-r from-blue-800 via-indigo-900 to-black flex items-center justify-center overflow-hidden pt-16 md:pt-0">
-      <NavbarLayer/>
-      {/* Dark overlay */}
-      <DarkVeil />
+    <section
+      id="Hero"
+      className="relative min-h-screen w-full overflow-hidden bg-black"
+    >
+      {/* Navbar */}
+      <NavbarLayer />
 
-      {/* Hero Content */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 md:px-16 gap-4 sm:gap-6 md:gap-12 text-center md:text-left">
-
-        {/* MLSC Logo */}
-        <Image
-          src="/mlsclogo.png"
-          alt="MLSC Logo"
-          width={500}
-          height={500}
-          loading="eager"
-          className="w-full max-w-sm h-auto object-contain"
+      {/* WebGL Background */}
+      <div className="absolute inset-0 z-0">
+        <DarkVeil
+          noiseIntensity={0.025}
+          scanlineIntensity={0.08}
+          scanlineFrequency={1.2}
+          warpAmount={0.12}
         />
+      </div>
 
+      {/* Readability Overlay */}
+      <div className="absolute inset-0 bg-black/65 z-10" />
 
-        {/* Text + MLSA Logo */}
-        <div className="flex flex-col items-center md:items-start gap-2 sm:gap-3 md:gap-4">
-          <h1 className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight md:leading-tight animate-fadeIn delay-200">
-            Microsoft Learn Student Club
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-2xl max-w-xs sm:max-w-sm md:max-w-md animate-fadeIn delay-400">
-            Empowering Students with Technology & Innovation
-          </p>
+      {/* HERO CONTENT */}
+      <div className="relative z-20 flex min-h-screen items-center justify-center px-6 md:px-16">
+        <div className="grid max-w-7xl grid-cols-1 md:grid-cols-2 items-center gap-10">
 
-          {/* MLSA Logo */}
+          {/* LEFT — LOGO */}
+          <div className="flex justify-center md:justify-start">
+            <Image
+              src="/mlsclogo.png"
+              alt="MLSC BVM Logo"
+              width={420}
+              height={420}
+              priority
+              className="w-56 sm:w-64 md:w-72 lg:w-80 object-contain 
+                          drop-shadow-[0_0_35px_rgba(59,130,246,0.25)]"
+            />
+          </div>
 
+          {/* RIGHT — TEXT */}
+          <div className="text-center md:text-left">
+            <h1 className="text-white font-extrabold leading-tight
+                           text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              Microsoft Learn
+              <br />
+              <span className="text-blue-400">Student Club</span>
+            </h1>
+
+            <p className="mt-4 text-gray-300 text-sm sm:text-base md:text-lg max-w-xl mx-auto md:mx-0">
+              A student-led technical community at BVM Engineering College,
+              focused on learning, collaboration, and real-world innovation.
+            </p>
+
+            {/* Divider */}
+            <div className="mt-6 h-px w-24 bg-blue-500/40 mx-auto md:mx-0" />
+
+            {/* College Name */}
+            <p className="mt-4 text-xs tracking-[0.3em] text-gray-400 uppercase">
+              BVM Engineering College
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Optional animated background shapes */}
-      <div className="absolute w-full h-full top-0 left-0 pointer-events-none">
-        <div className="absolute rounded-full w-32 h-32 sm:w-40 sm:h-40 bg-blue-600 opacity-20 top-6 left-2 animate-pulse-slow"></div>
-        <div className="absolute rounded-full w-56 h-56 sm:w-72 sm:h-72 bg-purple-600 opacity-20 bottom-0 right-2 sm:right-4 animate-pulse-slow"></div>
-      </div>
-    </div>
+    </section>
   );
 }

@@ -2,6 +2,7 @@
 import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import { EncryptedText } from "./encrypted-text";
+import { TextGenerateEffect } from "./text-generate-effect";
 
 interface TimelineEntry {
   title: string;
@@ -13,6 +14,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
+const words: string = `A timeline of workshops, competitions, and community-driven events organized
+by the Microsoft Learn Student Club, fostering learning, collaboration, and
+real-world technical skills.`
+          
   useEffect(() => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
@@ -45,13 +50,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </h1>
 
         <h2 className="text-lg md:text-4xl mb-4 font-bold max-w-4xl text-white">
-          Changelog from my journey
+          MLSC Events & Milestones
         </h2>
 
-        <p className="text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s a
-          timeline of my journey.
-        </p>
+       
+         <TextGenerateEffect words={words} />
+        
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">

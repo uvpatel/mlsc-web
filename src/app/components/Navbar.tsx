@@ -133,12 +133,12 @@ function Navbar({ className }: { className?: string }) {
       {/* Desktop Navbar */}
       <div className={`hidden md:block fixed top-10 inset-x-0 max-w-2xl mx-auto z-50  ${className}`}>
         <NavMenu setActive={setActive}>
-          <MenuItem setActive={setActive} active={active} item="About">
+          <MenuItem setActive={setActive} active={active} item="Section">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="#about">About MLSC</HoveredLink>
-              <HoveredLink href="#team">Our Team</HoveredLink>
-              <HoveredLink href="#PastMembers">Members</HoveredLink>
-              <HoveredLink href="#Connect">Connect with Us</HoveredLink>
+            <HoveredLink href="#Hero">Home</HoveredLink>
+              <HoveredLink href="#team">Team</HoveredLink>
+              <HoveredLink href="#xteam">Members</HoveredLink>
+              <HoveredLink href="#Connect">Contact</HoveredLink>
             </div>
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Events">
@@ -169,12 +169,12 @@ function Navbar({ className }: { className?: string }) {
               />
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Resources">
+          <MenuItem setActive={setActive} active={active} item="About">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/learning-paths">Learning Paths</HoveredLink>
-              <HoveredLink href="/certifications">Microsoft Certifications</HoveredLink>
-              <HoveredLink href="/projects">Student Projects</HoveredLink>
-              <HoveredLink href="/blog">Blog</HoveredLink>
+              <HoveredLink href="#about">About MLSC</HoveredLink>
+              <HoveredLink href="#team">Team</HoveredLink>
+              <HoveredLink href="#events">Events</HoveredLink>
+              <HoveredLink href="#Connect">Connect with Us</HoveredLink>
             </div>
           </MenuItem>
         </NavMenu>
@@ -203,12 +203,12 @@ function Navbar({ className }: { className?: string }) {
               className="mt-5 border-t border-white/10 pt-5 overflow-y-auto max-h-[calc(100vh-140px)]"
             >
               <div className="flex flex-col space-y-6 pb-4">
-                <MenuItem setActive={setActive} active={active} item="About" isMobile>
+                <MenuItem setActive={setActive} active={active} item="Sections" isMobile>
                   <div className="flex flex-col space-y-3 text-neutral-300">
-                    <HoveredLink href="#about">About MLSC</HoveredLink>
-                    <HoveredLink href="#team">Our Team</HoveredLink>
-                    <HoveredLink href="#mission">Mission & Vision</HoveredLink>
-                    <HoveredLink href="#join">Join Us</HoveredLink>
+                    <HoveredLink href="#Hero">Home</HoveredLink>
+                    <HoveredLink href="#team">Team</HoveredLink>
+                    <HoveredLink href="#events">Events</HoveredLink>
+                    <HoveredLink href="#Connect">Contact</HoveredLink>
                   </div>
                 </MenuItem>
 
@@ -241,7 +241,7 @@ function Navbar({ className }: { className?: string }) {
                   </div>
                 </MenuItem>
 
-                <MenuItem setActive={setActive} active={active} item="Resources" isMobile>
+                <MenuItem setActive={setActive} active={active} item="About" isMobile>
                   <div className="flex flex-col space-y-3 text-neutral-300">
                     <HoveredLink href="/learning-paths">Learning Paths</HoveredLink>
                     <HoveredLink href="/certifications">Microsoft Certifications</HoveredLink>

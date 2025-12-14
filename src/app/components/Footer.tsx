@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
 
             <div className="border-t border-gray-700 mt-10 pt-5 text-center text-gray-500 text-sm">
-                © 2025 MLSC. All rights reserved.
+                Copyright © 2025 All rights reserved | Designed and Created By Urvil Patel & MLSC BVM team 
             </div>
         </footer>
     );

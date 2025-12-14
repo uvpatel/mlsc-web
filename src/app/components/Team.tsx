@@ -125,24 +125,25 @@ export default function Team() {
     <section className="bg-black py-20" id="team">
       {/* Animated Title */}
       <motion.h2
-        className="text-4xl md:text-5xl font-bold text-white text-center mb-12"
+        className="text-4xl md:text-5xl font-bold text-blue-500  text-center mb-12"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <EncryptedText
           text="Our Team"
-          encryptedClassName="text-white"
-          revealedClassName="text-white"
+          encryptedClassName="text-blue-500 "
+          revealedClassName="text-blue-500 "
           revealDelayMs={80}
           flipDelayMs={60}
         />
       </motion.h2>
+      
       <h2 className="text-6xl font-bold text-center mb-20">
 
       </h2>
 
-
+    
       {/* Testimonials */}
       <AnimatedTestimonials testimonials={testimonials} />
     </section>
