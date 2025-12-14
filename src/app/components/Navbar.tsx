@@ -105,7 +105,8 @@ const EventItem = ({
         width={100}
         height={100}
         alt={title}
-        className="shrink-0 rounded-md shadow-2xl object-contain"
+        className="rounded-md shadow-2xl object-cover"
+        style={{ width: 'auto', height: 'auto' }}
       />
       <div>
         <h4 className="text-lg font-semibold mb-1 text-white">{title}</h4>
@@ -130,7 +131,7 @@ function Navbar({ className }: { className?: string }) {
   return (
     <>
       {/* Desktop Navbar */}
-      <div className={`hidden md:block fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 ${className}`}>
+      <div className={`hidden md:block fixed top-10 inset-x-0 max-w-2xl mx-auto z-50  ${className}`}>
         <NavMenu setActive={setActive}>
           <MenuItem setActive={setActive} active={active} item="About">
             <div className="flex flex-col space-y-4 text-sm">
@@ -180,13 +181,14 @@ function Navbar({ className }: { className?: string }) {
       </div>
 
       {/* Mobile Navbar */}
-      <div className={`md:hidden fixed top-4 inset-x-4 z-50 ${className}`}>
-        <div className="relative rounded-2xl border border-white/10 bg-black shadow-lg px-6 py-4">
+      <div className={`md:hidden fixed top-4 left-4 right-4 z-50 ${className}`}>
+        <div className="relative rounded-xl border border-white/10 bg-black/90 backdrop-blur-md shadow-2xl px-5 py-4 sm:px-6">
           <div className="flex items-center justify-between">
-            <span className="text-white font-semibold text-lg">MLSC</span>
+            <span className="text-white font-bold text-xl tracking-tight">MLSC</span>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white p-2 hover:bg-white/10 rounded-lg transition"
+              className="text-white p-3 -m-3 hover:bg-white/10 rounded-xl transition-colors duration-200"
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -197,20 +199,21 @@ function Navbar({ className }: { className?: string }) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mt-4 border-t border-white/10 pt-4"
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="mt-5 border-t border-white/10 pt-5 overflow-y-auto max-h-[calc(100vh-140px)]"
             >
-              <div className="flex flex-col space-y-2">
+              <div className="flex flex-col space-y-6 pb-4">
                 <MenuItem setActive={setActive} active={active} item="About" isMobile>
-                  <div className="flex flex-col space-y-2 text-sm">
+                  <div className="flex flex-col space-y-3 text-neutral-300">
                     <HoveredLink href="#about">About MLSC</HoveredLink>
                     <HoveredLink href="#team">Our Team</HoveredLink>
                     <HoveredLink href="#mission">Mission & Vision</HoveredLink>
                     <HoveredLink href="#join">Join Us</HoveredLink>
                   </div>
                 </MenuItem>
+
                 <MenuItem setActive={setActive} active={active} item="Events" isMobile>
-                  <div className="flex flex-col space-y-4 text-sm">
+                  <div className="flex flex-col space-y-5 text-neutral-300">
                     <EventItem
                       title="Web Services"
                       href="#webservices"
@@ -235,11 +238,11 @@ function Navbar({ className }: { className?: string }) {
                       src="https://image2url.com/images/1765561722307-377fc7b6-3266-453f-a7b6-b59474254cc8.png"
                       description="Binary Battles, an exciting coding competition designed to challenge students problem-solving and analytical skills."
                     />
-
                   </div>
                 </MenuItem>
+
                 <MenuItem setActive={setActive} active={active} item="Resources" isMobile>
-                  <div className="flex flex-col space-y-2 text-sm">
+                  <div className="flex flex-col space-y-3 text-neutral-300">
                     <HoveredLink href="/learning-paths">Learning Paths</HoveredLink>
                     <HoveredLink href="/certifications">Microsoft Certifications</HoveredLink>
                     <HoveredLink href="/projects">Student Projects</HoveredLink>
@@ -250,6 +253,7 @@ function Navbar({ className }: { className?: string }) {
             </motion.div>
           )}
         </div>
+
       </div>
     </>
   );

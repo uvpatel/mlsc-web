@@ -1,15 +1,14 @@
-
-
 "use client";
 
 import Image from 'next/image';
 import DarkVeil from '../components/ui/DarkVeil';
+import NavbarLayer from './Navbar';
 
 export default function Hero() {
   return (
     <div id='Hero'
     className="w-full min-h-[600px] md:min-h-[700px] relative bg-gradient-to-r from-blue-800 via-indigo-900 to-black flex items-center justify-center overflow-hidden pt-16 md:pt-0">
-
+      <NavbarLayer/>
       {/* Dark overlay */}
       <DarkVeil />
 
@@ -22,6 +21,7 @@ export default function Hero() {
           alt="MLSC Logo"
           width={500}
           height={500}
+          loading="eager"
           className="w-full max-w-sm h-auto object-contain"
         />
 

@@ -131,3 +131,13 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: relative; /* or absolute / fixed */
+}
