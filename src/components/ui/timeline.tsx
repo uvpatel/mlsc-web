@@ -39,11 +39,11 @@ real-world technical skills.`
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h1 className="text-6xl mb-4 font-bold max-w-4xl text-white">
+        <h1 className="text-6xl mb-4 font-bold max-w-4xl text-blue-500">
           <EncryptedText
             text="Our Events"
-            encryptedClassName="text-white"
-            revealedClassName="text-white"
+            encryptedClassName="text-blue-500"
+            revealedClassName="text-blue-500"
             revealDelayMs={80}
             flipDelayMs={60}
           />
@@ -54,7 +54,7 @@ real-world technical skills.`
         </h2>
 
        
-         <TextGenerateEffect words={words} />
+        <TextGenerateEffect words={words} />
         
       </div>
 

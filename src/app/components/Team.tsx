@@ -7,7 +7,7 @@ export default function Team() {
   const testimonials = [
     {
       quote:
-        "Leading with vision, learning with purpose, and empowering others to explore the limitless world of technology.",
+      "Guiding students to learn, lead, and innovate.",
       name: "Prof. Priyank Bhojak",
       designation: "Faculty Advisor",
       src: "https://image2url.com/images/1765564657314-0fdc56bd-92b8-4813-b3d3-fadec0faf627.png",
