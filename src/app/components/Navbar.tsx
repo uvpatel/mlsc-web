@@ -135,7 +135,7 @@ function Navbar({ className }: { className?: string }) {
         <NavMenu setActive={setActive}>
           <MenuItem setActive={setActive} active={active} item="Section">
             <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="#Hero">Home</HoveredLink>
+              <HoveredLink href="#Hero">Home</HoveredLink>
               <HoveredLink href="#team">Team</HoveredLink>
               <HoveredLink href="#xteam">Members</HoveredLink>
               <HoveredLink href="#Connect">Contact</HoveredLink>
@@ -243,10 +243,10 @@ function Navbar({ className }: { className?: string }) {
 
                 <MenuItem setActive={setActive} active={active} item="About" isMobile>
                   <div className="flex flex-col space-y-3 text-neutral-300">
-                    <HoveredLink href="/learning-paths">Learning Paths</HoveredLink>
-                    <HoveredLink href="/certifications">Microsoft Certifications</HoveredLink>
-                    <HoveredLink href="/projects">Student Projects</HoveredLink>
-                    <HoveredLink href="/blog">Blog</HoveredLink>
+                    <HoveredLink href="#about">About MLSC</HoveredLink>
+                    <HoveredLink href="#team">Team</HoveredLink>
+                    <HoveredLink href="#events">Events</HoveredLink>
+                    <HoveredLink href="#Connect">Connect with Us</HoveredLink>
                   </div>
                 </MenuItem>
               </div>
