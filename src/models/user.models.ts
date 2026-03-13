@@ -8,7 +8,9 @@ type IUser = {
     mobileno: Number;
     idno: String;
     github?: String;
-    department: String
+    department: String;
+    createdAt: Date;
+    updatedAt: Date;
 
 }
 
