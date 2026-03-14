@@ -43,7 +43,7 @@ const userSchema = new Schema<IUser>({
     },
     github: {
         type: String,
-        optional: true,
+        required: false,
     },
     department: {
         type: String,

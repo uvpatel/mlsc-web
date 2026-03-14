@@ -138,6 +138,7 @@ function Navbar({ className }: { className?: string }) {
               <HoveredLink href="#Hero">Home</HoveredLink>
               <HoveredLink href="#team">Team</HoveredLink>
               <HoveredLink href="#xteam">Members</HoveredLink>
+              <HoveredLink href="/register">Register</HoveredLink>
               <HoveredLink href="#Connect">Contact</HoveredLink>
             </div>
           </MenuItem>

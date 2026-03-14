@@ -34,3 +34,6 @@ export const userSchema = z.object({
     .min(2, "Department is required")
 
 });
+
+
+export type UserSchema = z.infer<typeof userSchema>;
