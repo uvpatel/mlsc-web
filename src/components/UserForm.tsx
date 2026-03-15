@@ -10,6 +10,7 @@ import {
   IconSend,
   IconCheck,
   IconAlertCircle,
+  IconRefresh,
 } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -51,12 +52,6 @@ export default function UserForm() {
 
       setSubmittedUsername(data.username);
       setSubmitStatus('success');
-      
-      // Reset form after 5 seconds
-      setTimeout(() => {
-        form.reset();
-        setSubmitStatus('idle');
-      }, 5000);
 
     } catch (error: any) {
       setSubmitStatus('error');
@@ -74,6 +69,12 @@ export default function UserForm() {
       
       console.error("Registration error:", error);
     }
+  };
+
+  const handleRegisterAnother = () => {
+    form.reset();
+    setSubmitStatus('idle');
+    setSubmittedUsername('');
   };
 
   return (
@@ -126,20 +127,24 @@ export default function UserForm() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-sm text-neutral-500 dark:text-neutral-400"
+              className="text-sm text-neutral-500 dark:text-neutral-400 mb-8"
             >
               Check your email for event updates and notifications.
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+            <motion.button
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="mt-6 flex items-center justify-center gap-2 text-sm text-neutral-400"
+              onClick={handleRegisterAnother}
+              className="group/btn shadow-input relative flex h-10 w-full items-center justify-center gap-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626] hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
             >
-              <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              Redirecting in 5 seconds...
-            </motion.div>
+              <IconRefresh className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+              <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                Register Another User
+              </span>
+              <BottomGradient />
+            </motion.button>
           </motion.div>
         ) : (
           <motion.div
