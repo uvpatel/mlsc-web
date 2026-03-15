@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { userSchema } from "@/schema/user.schema";
@@ -43,6 +43,16 @@ export default function UserForm() {
     }
   });
 
+  // Load success state from localStorage on mount
+  useEffect(() => {
+    const savedSuccess = localStorage.getItem('registrationSuccess');
+    if (savedSuccess) {
+      const { username } = JSON.parse(savedSuccess);
+      setSubmittedUsername(username);
+      setSubmitStatus('success');
+    }
+  }, []);
+
   const onSubmit: SubmitHandler<UserRegistrationInput> = async (data) => {
     try {
       setSubmitStatus('idle');
@@ -52,6 +62,12 @@ export default function UserForm() {
 
       setSubmittedUsername(data.username);
       setSubmitStatus('success');
+
+      // Save success state to localStorage
+      localStorage.setItem('registrationSuccess', JSON.stringify({
+        username: data.username,
+        timestamp: new Date().toISOString()
+      }));
 
     } catch (error: any) {
       setSubmitStatus('error');
@@ -72,6 +88,10 @@ export default function UserForm() {
   };
 
   const handleRegisterAnother = () => {
+    // Clear localStorage
+    localStorage.removeItem('registrationSuccess');
+    
+    // Reset form and state
     form.reset();
     setSubmitStatus('idle');
     setSubmittedUsername('');
