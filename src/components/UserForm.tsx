@@ -207,7 +207,7 @@ export default function UserForm() {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="Enter your Name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -222,7 +222,7 @@ export default function UserForm() {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john@example.com" {...field} />
+                        <Input type="email" placeholder="Enter your Email" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -263,7 +263,7 @@ export default function UserForm() {
                       <FormItem>
                         <FormLabel>Student ID</FormLabel>
                         <FormControl>
-                          <Input placeholder="STU123456" {...field} />
+                          <Input placeholder="24CP01" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -298,7 +298,7 @@ export default function UserForm() {
                     <FormItem>
                       <FormLabel>Department</FormLabel>
                       <FormControl>
-                        <Input placeholder="Computer Engineering" {...field} />
+                        <Input placeholder="Enter your Department" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
