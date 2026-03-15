@@ -52,7 +52,7 @@ const MenuItem = ({
           transition={transition}
         >
           {active === item && (
-            <div className={isMobile ? "pl-4 mt-2" : "absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4"}>
+            <div className={isMobile ? "pl-4 mt-2" : "absolute top-[calc(100%+1.2rem)] left-1/2 transform -translate-x-1/2 pt-4"}>
               <motion.div
                 transition={transition}
                 layoutId={isMobile ? undefined : "active"}
@@ -110,7 +110,7 @@ const EventItem = ({
       />
       <div>
         <h4 className="text-lg font-semibold mb-1 text-white">{title}</h4>
-        <p className="text-neutral-300 text-sm max-w-[10rem]">{description}</p>
+        <p className="text-neutral-300 text-sm max-w-40">{description}</p>
       </div>
     </a>
   );
@@ -133,7 +133,7 @@ function Navbar({ className }: { className?: string }) {
       {/* Desktop Navbar */}
       <div className={`hidden md:block fixed top-10 inset-x-0 max-w-2xl mx-auto z-50  ${className}`}>
         <NavMenu setActive={setActive}>
-          <MenuItem setActive={setActive} active={active} item="Section">
+          <MenuItem setActive={setActive} active={active} item="Explore">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="#Hero">Home</HoveredLink>
               <HoveredLink href="#team">Team</HoveredLink>
@@ -175,6 +175,7 @@ function Navbar({ className }: { className?: string }) {
               <HoveredLink href="#about">About MLSC</HoveredLink>
               <HoveredLink href="#team">Team</HoveredLink>
               <HoveredLink href="#events">Events</HoveredLink>
+              <HoveredLink href="/register">Register</HoveredLink>
               <HoveredLink href="#Connect">Connect with Us</HoveredLink>
             </div>
           </MenuItem>
