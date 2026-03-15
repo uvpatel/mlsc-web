@@ -3,7 +3,7 @@ import ConnectDB from "@/db/db";
 import { User } from "@/models/user.models";
 import { Registration } from "@/models/registration.model";
 import Event from "@/models/event.model";
-import { userRegistrationSchema } from "@/lib/validation/userSchema";
+import { userSchema } from "@/schema/user.schema";
 
 export async function POST(req: NextRequest, context: { params: Promise<{ slug: string }> }) {
   try {
@@ -11,7 +11,7 @@ export async function POST(req: NextRequest, context: { params: Promise<{ slug: 
     const resolvedParams = await context.params;
     const body = await req.json();
 
-    const validationResult = userRegistrationSchema.safeParse(body);
+    const validationResult = userSchema.safeParse(body);
     if (!validationResult.success) {
       return NextResponse.json({ 
         message: "Validation failed", 
@@ -29,9 +29,7 @@ export async function POST(req: NextRequest, context: { params: Promise<{ slug: 
     let user = await User.findOne({ email: userData.email });
     if (!user) {
       user = await User.create({
-        ...userData,
-        year: Number(userData.year),
-        mobileno: Number(userData.mobileno)
+        ...userData
       });
     }
 
