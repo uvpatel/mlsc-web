@@ -3,7 +3,7 @@ import {notFound} from "next/navigation";
 import {IEvent} from "@/models/event.model";
 import { getEventBySlug, getSimilarEventsBySlug } from "@/actions/event.actions";
 import Image from "next/image";
-import { RegistrationForm } from "@/components/RegistrationForm";
+import UserForm from "@/components/UserForm";
 import EventCard from "@/components/EventCard";
 import {cacheLife} from "next/cache";
 
@@ -106,7 +106,7 @@ const EventDetails = async ({ params }: { params: Promise<{slug: string}> }) => 
                             <p className="text-sm">Be the first to book your spot!</p>
                         )}
 
-                        <RegistrationForm slug={eventData.slug} />
+                        <UserForm />
                     </div>
                 </aside>
             </div>

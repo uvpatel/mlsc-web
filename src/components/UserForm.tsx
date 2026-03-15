@@ -3,8 +3,13 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { userSchema } from "@/schema/user.schema";
-import type { UserSchema } from "@/schema/user.schema";
+import type { UserRegistrationInput } from "@/schema/user.schema";
 import api from "@/lib/axios";
+import {
+  IconBrandGithub,
+  IconBrandGoogle,
+  IconBrandOnlyfans,
+} from "@tabler/icons-react";
 
 import {
   Form,
@@ -20,7 +25,7 @@ import { Button } from "@/components/ui/form/button";
 
 export default function UserForm() {
 
-  const form = useForm<UserSchema>({
+  const form = useForm<UserRegistrationInput>({
     resolver: zodResolver(userSchema),
     defaultValues: {
       username: "",
@@ -33,11 +38,11 @@ export default function UserForm() {
     }
   });
 
-  const onSubmit: SubmitHandler<UserSchema> = async (data) => {
+  const onSubmit: SubmitHandler<UserRegistrationInput> = async (data) => {
 
     try {
 
-      await api.post<UserSchema>("/users", data);
+      await api.post<UserRegistrationInput>("/users", data);
 
       alert("User created successfully");
 
@@ -56,7 +61,7 @@ export default function UserForm() {
   return (
 
     <div className="max-w-lg mx-auto mt-10 p-6 border rounded-xl shadow">
-
+      <h1 className="text-3xl p-2">Registration Form</h1>
       <Form {...form}>
 
         <form
@@ -204,6 +209,17 @@ export default function UserForm() {
             {form.formState.isSubmitting ? "Submitting..." : "Submit"}
           </Button>
 
+             <button
+            className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
+            type="submit"
+             disabled={form.formState.isSubmitting}
+          >
+            <IconBrandOnlyfans className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+            <span className="text-sm text-neutral-700 dark:text-neutral-300">
+               {form.formState.isSubmitting ? "Submitting..." : "Submit"}
+            </span>
+            <BottomGradient />
+          </button>
         </form>
 
       </Form>
@@ -213,3 +229,11 @@ export default function UserForm() {
   );
 
 }
+const BottomGradient = () => {
+  return (
+    <>
+      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+    </>
+  );
+};

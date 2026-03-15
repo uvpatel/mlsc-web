@@ -1,6 +1,6 @@
 'use server';
 
-import registrationSchema from '@/models/register.models';
+import { Registration } from '@/models/registration.model';
 
 import ConnectDB from "@/db/db";
 
@@ -8,7 +8,7 @@ export const createBooking = async ({ eventId, slug, email }: { eventId: string;
     try {
         await ConnectDB();
 
-        await registrationSchema.create({ eventId, slug, email });
+        await Registration.create({ eventId, slug, email });
 
         return { success: true };
     } catch (e) {

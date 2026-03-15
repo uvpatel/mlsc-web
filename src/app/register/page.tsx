@@ -1,6 +1,6 @@
 "use client";
-import {RegistrationForm} from "@/components/RegistrationForm";
+import UserForm from "@/components/UserForm";
 
 export default function RegisterPage() {
-  return <RegistrationForm slug="mlsc" />;
+  return <UserForm  />;
 }
