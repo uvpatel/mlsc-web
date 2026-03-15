@@ -103,7 +103,7 @@ export default function UserForm() {
         Registration Form
       </h1>
       <p className="text-center text-neutral-600 dark:text-neutral-400 mb-6">
-        Join the Microsoft Learn Student Club
+        Join the GitHub Copilot Dev Days Event
       </p>
 
       <AnimatePresence mode="wait">
