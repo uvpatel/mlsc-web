@@ -100,7 +100,7 @@ export default function UserForm() {
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6 md:p-8 border rounded-xl shadow-lg bg-white dark:bg-black">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-2 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-2 bg-linear-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
         Registration Form
       </h1>
       <p className="text-center text-neutral-600 dark:text-neutral-400 mb-6">
@@ -184,7 +184,7 @@ export default function UserForm() {
                   className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg"
                 >
                   <div className="flex items-start gap-3">
-                    <IconAlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                    <IconAlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-semibold text-red-800 dark:text-red-300 mb-1">
                         Registration Failed
@@ -208,7 +208,7 @@ export default function UserForm() {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="Enter Your Name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -223,7 +223,7 @@ export default function UserForm() {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john@example.com" {...field} />
+                        <Input type="email" placeholder="Enter Your Email" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -245,7 +245,7 @@ export default function UserForm() {
                               {...field}
                               onChange={(e) => field.onChange(parseInt(e.target.value, 10))}
                               value={field.value}
-                              className="shadow-input appearance-none flex h-10 w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600 cursor-pointer pr-10"
+                              className="shadow-input appearance-none flex h-10 w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600 cursor-pointer pr-10"
                             >
                               <option value="" disabled>Select year</option>
                               <option value="1">1st Year</option>
@@ -270,7 +270,7 @@ export default function UserForm() {
                         <FormLabel>Student ID</FormLabel>
                         <FormControl>
                           <Input 
-                            placeholder="2402630" 
+                            placeholder="eg.24CP431" 
                             maxLength={7}
                             {...field} 
                           />
@@ -311,7 +311,7 @@ export default function UserForm() {
                         <div className="relative">
                           <select
                             {...field}
-                            className="shadow-input appearance-none flex h-10 w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600 cursor-pointer pr-10"
+                            className="shadow-input appearance-none flex h-10 w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600 cursor-pointer pr-10"
                           >
                             <option value="" disabled>Select department</option>
                             <option value="Computer Engineering">Computer </option>
@@ -396,8 +396,8 @@ export default function UserForm() {
 const BottomGradient = () => {
   return (
     <>
-      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
-      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-linear-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-linear-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
     </>
   );
 };
