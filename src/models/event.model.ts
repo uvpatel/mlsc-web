@@ -1,6 +1,5 @@
 import { Schema, model, models, Document } from 'mongoose';
 
-// TypeScript interface for Event document
 export interface IEvent extends Document {
   title: string;
   slug: string;
@@ -11,7 +10,7 @@ export interface IEvent extends Document {
   location: string;
   date: string;
   time: string;
-  mode: string;
+  mode: 'online' | 'offline' | 'hybrid';  // ✅ IMPROVED: Literal type
   audience: string;
   agenda: string[];
   organizer: string;
@@ -26,6 +25,7 @@ const EventSchema = new Schema<IEvent>(
       type: String,
       required: [true, 'Title is required'],
       trim: true,
+      minlength: [3, 'Title must be at least 3 characters'],  // ✅ ADDED
       maxlength: [100, 'Title cannot exceed 100 characters'],
     },
     slug: {
@@ -33,23 +33,30 @@ const EventSchema = new Schema<IEvent>(
       unique: true,
       lowercase: true,
       trim: true,
+      required: [true, 'Slug is required'],  // ✅ ADDED
     },
     description: {
       type: String,
       required: [true, 'Description is required'],
       trim: true,
+      minlength: [10, 'Description must be at least 10 characters'],  // ✅ ADDED
       maxlength: [1000, 'Description cannot exceed 1000 characters'],
     },
     overview: {
       type: String,
       required: [true, 'Overview is required'],
       trim: true,
+      minlength: [10, 'Overview must be at least 10 characters'],  // ✅ ADDED
       maxlength: [500, 'Overview cannot exceed 500 characters'],
     },
     image: {
       type: String,
       required: [true, 'Image URL is required'],
       trim: true,
+      match: [
+        /^https?:\/\/.+\.(jpg|jpeg|png|webp|gif)$/i,  // ✅ ADDED: URL validation
+        'Image must be a valid URL ending with jpg, jpeg, png, webp, or gif',
+      ],
     },
     venue: {
       type: String,
@@ -105,55 +112,49 @@ const EventSchema = new Schema<IEvent>(
     },
   },
   {
-    timestamps: true, // Auto-generate createdAt and updatedAt
+    timestamps: true,
+    toJSON: { virtuals: true },  // ✅ ADDED
+    toObject: { virtuals: true }  // ✅ ADDED
   }
 );
 
-// Pre-save hook for slug generation and data normalization
+// ✅ EXISTING: Pre-save hook for slug generation
 EventSchema.pre<IEvent>('save', function () {
   const event = this as IEvent;
 
-  // Generate slug only if title changed or document is new
   if (event.isModified('title') || event.isNew) {
     event.slug = generateSlug(event.title);
   }
 
-  // Normalize date to ISO format if it's not already
   if (event.isModified('date')) {
     event.date = normalizeDate(event.date);
   }
 
-  // Normalize time format (HH:MM)
   if (event.isModified('time')) {
     event.time = normalizeTime(event.time);
   }
-
-  
 });
 
-// Helper function to generate URL-friendly slug
+// Helper functions (keep as is)
 function generateSlug(title: string): string {
   return title
     .toLowerCase()
     .trim()
-    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
-    .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
-// Helper function to normalize date to ISO format
 function normalizeDate(dateString: string): string {
   const date = new Date(dateString);
   if (isNaN(date.getTime())) {
     throw new Error('Invalid date format');
   }
-  return date.toISOString().split('T')[0]; // Return YYYY-MM-DD format
+  return date.toISOString().split('T')[0];
 }
 
-// Helper function to normalize time format
 function normalizeTime(timeString: string): string {
-  // Handle various time formats and convert to HH:MM (24-hour format)
   const timeRegex = /^(\d{1,2}):(\d{2})(\s*(AM|PM))?$/i;
   const match = timeString.trim().match(timeRegex);
   
@@ -166,7 +167,6 @@ function normalizeTime(timeString: string): string {
   const period = match[4]?.toUpperCase();
   
   if (period) {
-    // Convert 12-hour to 24-hour format
     if (period === 'PM' && hours !== 12) hours += 12;
     if (period === 'AM' && hours === 12) hours = 0;
   }
@@ -178,11 +178,13 @@ function normalizeTime(timeString: string): string {
   return `${hours.toString().padStart(2, '0')}:${minutes}`;
 }
 
-// Create unique index on slug for better performance
+// ✅ EXISTING: Indexes
 EventSchema.index({ slug: 1 }, { unique: true });
-
-// Create compound index for common queries
 EventSchema.index({ date: 1, mode: 1 });
+
+// ✅ ADDED: Additional useful indexes
+EventSchema.index({ tags: 1 });
+EventSchema.index({ createdAt: -1 });  // For sorting by newest
 
 const Event = models.Event || model<IEvent>('Event', EventSchema);
 

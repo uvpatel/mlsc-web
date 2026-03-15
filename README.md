@@ -82,3 +82,19 @@ We leverage **Tailwind CSS** extended with custom complex animations. Many compo
 Modifications to main landing sections should occur within `src/app/components/`. If adding new pages, follow the Next.js App Router `src/app/.../page.tsx` pattern and modularize complex client-side interactions within `src/components/`.
 
 Your feedback and contributions are welcome! 🚀
+
+posthog
+
+'use client'
+
+import { usePostHog } from 'posthog-js/react'
+
+export default function CheckoutPage() {
+    const posthog = usePostHog()
+
+    function handlePurchase() {
+        posthog.capture('purchase_completed', { amount: 99 })
+    }
+
+    return <button onClick={handlePurchase}>Complete purchase</button>
+}
