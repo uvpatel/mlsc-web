@@ -205,12 +205,13 @@ function Navbar({ className }: { className?: string }) {
               className="mt-5 border-t border-white/10 pt-5 overflow-y-auto max-h-[calc(100vh-140px)]"
             >
               <div className="flex flex-col space-y-6 pb-4">
-                <MenuItem setActive={setActive} active={active} item="Sections" isMobile>
+                <MenuItem setActive={setActive} active={active} item="Explore" isMobile>
                   <div className="flex flex-col space-y-3 text-neutral-300">
                     <HoveredLink href="#Hero">Home</HoveredLink>
                     <HoveredLink href="#team">Team</HoveredLink>
                     <HoveredLink href="#events">Events</HoveredLink>
-                    <HoveredLink href="#Connect">Contact</HoveredLink>
+                    <HoveredLink href="/register">Register</HoveredLink>
+                    <HoveredLink href="#Connect">Connect with Us</HoveredLink>
                   </div>
                 </MenuItem>
 
