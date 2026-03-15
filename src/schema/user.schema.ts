@@ -27,7 +27,7 @@ export const userSchema = z.object({
   idno: z
     .string()
     .min(3, "ID number is required")
-    .max(20, "ID number too long")
+    .max(8, "ID number too long")
     .trim()
     .toUpperCase(),
 
