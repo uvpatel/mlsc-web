@@ -26,6 +26,7 @@ const nextConfig: NextConfig = {
         source: "/ingest/:path*",
         destination: "https://us.i.posthog.com/:path*",
       },
+      
     ];
   },
   images: {
@@ -53,8 +54,14 @@ const nextConfig: NextConfig = {
         hostname: "img.icons8.com",
         port: "",
         pathname: "/**",
-      }
-
+      },
+     
+      {
+        protocol: "https",
+        hostname: "www.image2url.com",
+        pathname: "/r2/default/images/**",
+      },
+    
     ],
   },
 };
