@@ -80,7 +80,7 @@ export default function Team() {
         "I don’t just write code — I design systems that think, scale, and evolve.Every function I create is a decision, every architecture a strategy, and every bug a puzzle waiting to be understood. Technology is my language, logic is my mindset, and building is my instinct.",
       name: "Urvil Patel",
       designation: "Tech Lead",
-      src: "https://image2url.com/images/1765557240836-08f38755-895f-42cf-8e86-f326881aa400.jpeg",
+      src: "https://www.image2url.com/r2/default/images/1778320414754-93ecbe0d-21fb-4f5f-b2d6-a15853f4feac.jpeg",
     },
     {
       quote:
